@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t keithneurodog/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run keithneurodog/docker-react npm run test -- --coverage
