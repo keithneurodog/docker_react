@@ -1,5 +1,28 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run in Docker! :D
+### Development build & run
+```
+docker-compose up --build
+```
+### Run tests from built image
+```
+docker-compose up --build
+
+OR MANUALLY LIKE THIS...
+
+docker build -t frontend -f Dockerfile.dev .
+docker run -it frontend npm run test
+```
+###Build production static files + run on nginx
+```
+docker build .
+
+...then...
+
+docker run -p 8080:80 <Image ID>
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
